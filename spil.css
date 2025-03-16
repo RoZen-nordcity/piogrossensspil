@@ -7,10 +7,11 @@ body {
     text-align: center;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centrer alt */
     align-items: center;
     overflow: hidden;
     background-color: #f0f0f0; /* Lysere baggrund for bedre kontrast */
+    padding-top: 50px; /* Tilføj lidt afstand fra toppen */
 }
 
 /* Baggrund */
@@ -103,102 +104,65 @@ p {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
 }
 
-/* Dropdown Menu */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    font-family: 'Arial', sans-serif;
+/* Knapper til de 3 spil */
+.buttons-container {
+    display: flex;
+    flex-direction: column; /* Placer knapperne vertikalt */
+    gap: 20px; /* Afstand mellem knapperne */
+    align-items: center; /* Centrer knapperne horisontalt */
+    z-index: 10;
 }
 
-/* Dropdown-knappen */
-.dropbtn {
-    background-color: #8e44ad; /* Mørk lilla farve */
+button {
+    background-color: #3498db; /* Lys blå farve for knapperne */
     color: white;
-    font-size: 1.8em;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px 50px;
     border: none;
-    padding: 20px 40px;
-    border-radius: 50px; /* Rundere hjørner */
+    border-radius: 50px;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 2px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; /* Glat overgang ved hover */
+    animation: buttonBounce 1s ease infinite; /* Animer knappen med en let hoppeeffekt */
 }
 
-/* Hover-effekt på dropdown-knappen */
-.dropbtn:hover {
-    background-color: #f39c12; /* Neon orange ved hover */
-    transform: scale(1.1); /* Lettere forstørrelse ved hover */
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4); /* Dybere skygge */
-    transition: all 0.3s ease;
+/* Hover effekt */
+button:hover {
+    background-color: #1abc9c; /* Ændrer farven til en grønlig nuance ved hover */
+    transform: scale(1.1); /* Skalerer knappen lidt op ved hover */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3); /* Øger skyggen for et dybere look */
 }
 
-/* Dropdown-indhold */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #2c3e50; /* Mørk baggrund for dropdown */
-    min-width: 200px; /* Gør dropdownen bredere */
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 0;
-    opacity: 0; /* Start som usynlig */
-    pointer-events: none; /* Sørger for at dropdownen ikke interfererer med andre elementer */
-    animation: slideIn 0.3s ease-out; /* Gør dropdown glidende */
-}
-
-/* Hover-effekt på dropdown-indhold */
-.dropdown-content a {
-    color: white;
-    padding: 15px 20px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    font-size: 1.6em;
-    transition: background-color 0.3s, color 0.3s;
-    border-radius: 8px;
-}
-
-/* Hover-effekt på hver dropdown-mulighed */
-.dropdown-content a:hover {
-    background-color: #f39c12; /* Lys orange ved hover */
-    color: #fff;
-    transform: scale(1.05); /* Lettere forstørrelse ved hover */
-}
-
-/* Vis dropdown-menuen ved hover på knappen */
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1; /* Får dropdown-menuen til at blive synlig */
-    pointer-events: all; /* Aktiverer dropdownen */
-}
-
-/* Animation for at få dropdownen til at glide ind */
-@keyframes slideIn {
+/* Animering af knappen - let hoppeeffekt */
+@keyframes buttonBounce {
     0% {
-        opacity: 0;
-        transform: translateY(-20px); /* Starter fra toppen */
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px); /* Løfter knappen lidt op */
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-10px); /* Løfter den igen */
     }
     100% {
-        opacity: 1;
-        transform: translateY(0); /* Kommer ned til sin endelige position */
-    }
-}
-
-/* Animer tekst - fade in */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* Responsivitet */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em; /* Mindre fontstørrelse på mobile */
+    }
+
+    button {
+        font-size: 1.5em; /* Mindre fontstørrelse på knapper */
+        padding: 15px 40px; /* Mindre padding på mobile */
+    }
+}
