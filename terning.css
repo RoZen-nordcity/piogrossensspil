@@ -1,0 +1,55 @@
+/* Generelle stilarter */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #2980b9, #8e44ad);
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Sektion til selve terningespillet */
+.game {
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+}
+
+/* Stil til overskrifter */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Stil til resultatet */
+#result {
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #f39c12;
+}
+
+/* Stil til knappen */
+button {
+    background-color: #8e44ad;
+    color: white;
+    font-size: 1.5em;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+button:hover {
+    background-color: #f39c12;
+}

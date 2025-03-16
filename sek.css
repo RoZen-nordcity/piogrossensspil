@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffeb3b; /* Lys gul baggrund for festlig stemning */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://www.example.com/background.jpg'); /* Baggrundsbillede (kan ændres til din egen) */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.game {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-gennemsigtig hvid baggrund */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ff6347; /* Rød-orange farve til overskriften */
+    margin-bottom: 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Sjov skrifttype */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 30px;
+    font-family: 'Verdana', sans-serif;
+    font-weight: bold;
+}
+
+button {
+    background-color: #8e44ad;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 150px;
+}
+
+button:hover {
+    background-color: #f39c12;
+    transform: scale(1.1); /* Skaber en let forstørrelse ved hover */
+}
+
+#output {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff6347;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    width: 150px;
+}
+
+/* Festlige emojis og baggrundseffekter */
+body::after {
+    content: "🎉🎉🎉🎉🎉"; /* Festlige emojis som baggrund */
+    font-size: 5em;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    opacity: 0.15;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+body::before {
+    content: "🍸🍻🍺🥳🎲"; /* Flere festlige emojis */
+    font-size: 4em;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    opacity: 0.1;
+    transform: rotate(45deg);
+    z-index: -1;
+}

@@ -1,0 +1,204 @@
+/* Generelle stilarter */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f0f0f0; /* Lysere baggrund for bedre kontrast */
+}
+
+/* Baggrund */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #e74c3c, #8e44ad, #2980b9, #f39c12); /* Nye festlige farver */
+    background-size: 400% 400%; 
+    animation: gradientAnimation 15s ease infinite;
+    z-index: -1;
+}
+
+/* Animering af gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Velkomst sektion */
+.intro {
+    text-align: center;
+    padding: 20px;
+    max-width: 80%;
+    position: relative;
+    z-index: 10;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Effekt for at få teksten til at komme ind */
+h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6ec7, #8e44ad, #f39c12); /* Neon-lilla og pink gradient */
+    background-clip: text;
+    color: transparent;
+    animation: letterJump 2s ease-out infinite, textAnimate 1.5s ease-out; /* Animer tekst og hoppingseffekt */
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6); /* Skyggeeffekt for bedre kontrast */
+}
+
+/* Animering af hver enkelt bogstav i h1 for hopping */
+@keyframes letterJump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Pulserende effekt på h1 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+p {
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    animation: textAnimate 1.5s ease-out 0.5s;
+    opacity: 0.9;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Dropdown-knappen */
+.dropbtn {
+    background-color: #8e44ad; /* Mørk lilla farve */
+    color: white;
+    font-size: 1.8em;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px; /* Rundere hjørner */
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Hover-effekt på dropdown-knappen */
+.dropbtn:hover {
+    background-color: #f39c12; /* Neon orange ved hover */
+    transform: scale(1.1); /* Lettere forstørrelse ved hover */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4); /* Dybere skygge */
+    transition: all 0.3s ease;
+}
+
+/* Dropdown-indhold */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2c3e50; /* Mørk baggrund for dropdown */
+    min-width: 200px; /* Gør dropdownen bredere */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 0;
+    opacity: 0; /* Start som usynlig */
+    pointer-events: none; /* Sørger for at dropdownen ikke interfererer med andre elementer */
+    animation: slideIn 0.3s ease-out; /* Gør dropdown glidende */
+}
+
+/* Hover-effekt på dropdown-indhold */
+.dropdown-content a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 1.6em;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px;
+}
+
+/* Hover-effekt på hver dropdown-mulighed */
+.dropdown-content a:hover {
+    background-color: #f39c12; /* Lys orange ved hover */
+    color: #fff;
+    transform: scale(1.05); /* Lettere forstørrelse ved hover */
+}
+
+/* Vis dropdown-menuen ved hover på knappen */
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1; /* Får dropdown-menuen til at blive synlig */
+    pointer-events: all; /* Aktiverer dropdownen */
+}
+
+/* Animation for at få dropdownen til at glide ind */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Starter fra toppen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Kommer ned til sin endelige position */
+    }
+}
+
+/* Animer tekst - fade in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

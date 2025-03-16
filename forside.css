@@ -1,0 +1,140 @@
+/* Generelle stilarter */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Moderne skrifttype */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Baggrund */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #e74c3c, #8e44ad, #2980b9, #f39c12);
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
+    z-index: -1;
+}
+
+/* Animering af gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Velkomstsektion */
+.intro {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+    max-width: 90%;
+    animation: fadeIn 1.5s ease-out;
+}
+
+h1 {
+    font-size: 4.5em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6ec7, #8e44ad, #f39c12);
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+    animation: letterJump 2s ease-out infinite, textAnimate 1.5s ease-out;
+}
+
+@keyframes letterJump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25%, 75% {
+        transform: translateY(-12px);
+    }
+}
+
+p {
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    animation: textAnimate 1.5s ease-out 0.5s;
+    opacity: 0.9;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Start Spil knap */
+a.btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    font-size: 1.8em;
+    font-weight: 600;
+    padding: 20px 60px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: buttonBounce 1s ease infinite;
+}
+
+a.btn:hover {
+    background-color: #1abc9c;
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Knappen hoppeeffekt */
+@keyframes buttonBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25%, 75% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Animationer */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsivitet */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    p {
+        font-size: 1.4em;
+    }
+    a.btn {
+        font-size: 1.5em;
+        padding: 15px 40px;
+    }
+}
